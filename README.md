@@ -6,14 +6,11 @@ A role-based financial dashboard backend built using Spring Boot, providing tran
 
 🎨 Tech Stack & Docs
 
-""Java" (https://img.shields.io/badge/Java-17-orange)" (https://www.oracle.com/java/)
-""Spring Boot" (https://img.shields.io/badge/SpringBoot-Framework-green)" (https://spring.io/projects/spring-boot)
-""Spring Data JPA" (https://img.shields.io/badge/SpringData-JPA-blue)" (https://spring.io/projects/spring-data-jpa)
-""Hibernate" (https://img.shields.io/badge/Hibernate-ORM-yellow)" (https://hibernate.org/)
-""MySQL" (https://img.shields.io/badge/MySQL-Database-blue)" (https://www.mysql.com/)
-""Docker" (https://img.shields.io/badge/Docker-Container-blue)" (https://docs.docker.com/)
-""Render" (https://img.shields.io/badge/Render-Deployment-purple)" (https://render.com/docs)
-""Postman" (https://img.shields.io/badge/Postman-API_Testing-orange)" (https://www.postman.com/)
+[![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2.0-green?style=flat-square)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/MySQL-8-blue?style=flat-square)](https://www.mysql.com/)
+[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-red?style=flat-square)](https://hibernate.org/)
+[![Postman](https://img.shields.io/badge/Postman-API%20Testing-brightgreen?style=flat-square)](https://www.postman.com/)
 
 ---
 
