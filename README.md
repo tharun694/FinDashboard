@@ -1,187 +1,173 @@
-🚀 FinDashboard API
+Zorvyn
+Assignment Portal
+Tharun Prakash G
+tharunprakash999@gmail.com
+Finance Data Processing and Access Control Backend
+Backend Developer Intern
+Internship
+Assignment Details
+Read the following instructions carefully before starting your assignment.
 
-A role-based financial dashboard backend built using Spring Boot, providing transaction management, financial insights, and analytics.
+Finance Data Processing and Access Control Backend
+Objective
+To evaluate your backend development skills through a practical assignment centered around API design, data modeling, business logic, and access control.
 
----
+This assignment is intended to assess how you think about backend architecture, structure application logic, handle data correctly, and build reliable systems that are clear, maintainable, and logically organized.
 
-🎨 Tech Stack & Docs
+Note: If you have already built a similar backend project earlier, you may submit that project for evaluation. Please make sure to clearly explain how it matches this assignment and share the repository and, if available, the deployed API or documentation link.
+Key Instructions
+You are not required to follow a fixed project structure. You are free to organize the backend in the way you believe is most appropriate.
+Focus on correctness, clarity, and maintainability. We are interested in how you design data flow, structure APIs, and write backend logic.
+Reasonable assumptions are acceptable. If something is not explicitly defined, you may make sensible assumptions and document them.
+Clean implementation matters. A smaller but well designed solution is better than a large but inconsistent one.
+Flexibility
+You have full freedom to:
 
-[![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2.0-green?style=flat-square)](https://spring.io/projects/spring-boot)
-[![MySQL](https://img.shields.io/badge/MySQL-8-blue?style=flat-square)](https://www.mysql.com/)
-[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-red?style=flat-square)](https://hibernate.org/)
-[![Postman](https://img.shields.io/badge/Postman-API%20Testing-brightgreen?style=flat-square)](https://www.postman.com/)
+Use any backend language, framework, or library
+Use any database of your choice, or even an in memory store for a simplified implementation
+Define your own schema, service structure, and business logic flow
+Build REST APIs, GraphQL APIs, or an equivalent backend interface
+Use mock authentication and local development setup if needed
+Scenario
+Imagine you are building the backend for a finance dashboard system where different users interact with financial records based on their role.
 
----
+The system should support the storage and management of financial entries, user roles, permissions, and summary level analytics. The goal is to build a backend that is logically structured and able to serve data to a frontend dashboard in a clean and efficient way.
 
-🌐 Live Project
+Core Requirements
+1. User and Role Management
+Provide a way to manage users and their access levels within the system.
 
-👉 https://findashboard-3.onrender.com/
+Your backend should support:
 
----
+Creating and managing users
+Assigning roles to users
+Managing user status such as active or inactive
+Restricting actions based on roles
+You may define roles such as:
 
-📌 Overview
+Viewer: Can only view dashboard data
+Analyst: Can view records and access insights
+Admin: Can create, update, and manage records and users
+The exact role model is up to you, but role based behavior should be clear in your implementation.
 
-FinDashboard is a backend system that manages financial transactions with Role-Based Access Control (RBAC) and provides real-time analytics such as summaries, monthly reports, and category-based insights.
+2. Financial Records Management
+Create backend support for financial data such as transactions or entries.
 
----
+Each record can include fields such as:
 
-🎯 Features
+Amount
+Type such as income or expense
+Category
+Date
+Notes or description
+Your backend should support operations such as:
 
-- 🔐 Role-Based Access Control (ADMIN, ANALYST, VIEWER)
-- 💰 Transaction Management (Create, View, Delete)
-- 📊 Financial Summary (Income, Expense, Balance)
-- 📅 Monthly Summary
-- 📈 Category-wise Analysis
-- ⚠️ Global Exception Handling
-- ☁️ Cloud Deployment (Render)
-- 🐳 Dockerized Application
+Creating records
+Viewing records
+Updating records
+Deleting records
+Filtering records based on criteria such as date, category, or type
+3. Dashboard Summary APIs
+Provide APIs or backend logic that can return summary level data for a dashboard.
 
----
+Examples include:
 
-🧠 Roles & Permissions
+Total income
+Total expenses
+Net balance
+Category wise totals
+Recent activity
+Monthly or weekly trends
+The purpose here is to show how you design backend endpoints or service logic for aggregated data, not just basic CRUD operations.
 
-Role| Access
-ADMIN| Full control (CRUD + Summary + Analysis)
-ANALYST| View all data + Summary + Analysis
-VIEWER| View only own transactions
+4. Access Control Logic
+Implement backend level access control for different roles.
 
----
+The system should clearly enforce which type of user can perform which action. For example:
 
-⚙️ Tech Stack
+A viewer should not be able to create or modify records
+An analyst may be allowed to read records and access summaries
+An admin may be allowed full management access
+You may implement this using middleware, guards, decorators, policy checks, or any equivalent method depending on the framework you choose.
 
-- Java 17
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- MySQL (Cloud Database)
-- Maven
-- Docker
-- Render
+5. Validation and Error Handling
+Your backend should demonstrate proper handling of incorrect or incomplete input.
 
----
+This includes:
 
-📂 Project Structure
+Input validation
+Useful error responses
+Status codes used appropriately
+Protection against invalid operations
+The goal is not perfection, but your implementation should show that you understand how a backend should behave in real usage.
 
-controller/
-  - TransactionController
-  - UserController
+6. Data Persistence
+Use a persistence approach suitable for your project.
 
-service/
-  - TransactionService
-  - UserService
+This can be:
 
-entity/
-  - User
-  - Transaction
+A relational database
+A document database
+SQLite for simplicity
+Any other reasonable option
+If you choose a simplified or mock storage approach, mention it clearly in your documentation.
 
-repository/
-  - JPA Repositories
+Optional Enhancements
+You may include additional improvements such as:
 
-enums/
-  - Role
+Authentication using tokens or sessions
+Pagination for record listing
+Search support
+Soft delete functionality
+Rate limiting
+Unit tests or integration tests
+API documentation
+These are not mandatory, but thoughtful additions are always appreciated.
 
----
+Evaluation Criteria
+1. Backend Design
+How well the application is structured, including routes, services, models, and separation of concerns.
 
-🔗 API Endpoints
+2. Logical Thinking
+How clearly business rules, access control, and data processing have been implemented.
 
-🔹 Health
+3. Functionality
+Whether the expected APIs and backend features work correctly and consistently.
 
-GET /greet
+4. Code Quality
+Readability, maintainability, naming, organization, and general coding practices.
 
-🔹 User
+5. Database and Data Modeling
+How appropriately data is modeled and managed for the use case.
 
-POST /user
+6. Validation and Reliability
+How well the application handles bad input, invalid states, and error conditions.
 
-🔹 Transactions
+7. Documentation
+Clarity of the README, setup process, API explanation, assumptions made, and any tradeoffs considered.
 
-PUT    /transaction/{adminId}
-GET    /transactions/{userId}
-DELETE /transaction/{userId}/{transId}
+8. Additional Thoughtfulness
+Any extra effort that improves usability, clarity, or system design.
 
-🔹 Summary & Analytics
+Important Note
+This assignment is designed purely for assessment. The purpose is to understand your backend thinking, implementation style, and engineering approach. You are not expected to build a production ready system.
 
-GET /summary/{adminId}/{userId}
-GET /summary/monthly/{adminId}/{userId}
-GET /analysis/category/{adminId}/{userId}
+A well reasoned and well structured submission will always be valued more than unnecessary complexity. This assignment is an opportunity to show how you approach backend engineering from both a technical and practical perspective. We are interested not only in whether the system works, but also in how you think while building it.
 
----
+Submission Deadline
+Mon, 06 Apr, 2026
+10:00 pm
 
-📊 Sample Response
+7 hours remaining
 
-{
-  "message": "Summary fetched",
-  "data": {
-    "income": 5000,
-    "expense": 2000,
-    "balance": 3000
-  }
-}
+Important Guidelines
+Please note that you will only be able to submit your assignment once. Make sure to review your work thoroughly before submitting.
+All required fields must be completed before submission. Incomplete submissions will not be accepted.
+Your submission must be your own original work. Plagiarised content will result in disqualification.
+Tips for Success
+Take your time to understand the requirements thoroughly before starting. Plan your approach carefully and ensure your submission reflects your best work.
 
----
+Ready to submit your assignment?
+Make sure you have reviewed all your work before submitting.
 
-🐳 Docker Setup
-
-mvn clean package
-docker build -t findashboard .
-docker run -p 8080:8080 findashboard
-
----
-
-☁️ Deployment
-
-- Deployed on Render
-- Connected to Cloud MySQL Database
-- Environment-based configuration
-
----
-
-📚 Spring Boot Concepts Used
-
-- REST Controllers ("@RestController")
-- Dependency Injection
-- Service Layer Architecture
-- Spring Data JPA (Repositories)
-- Entity Mapping ("@Entity")
-- Exception Handling ("@RestControllerAdvice")
-- Response Handling ("ResponseEntity")
-- Aggregation Logic (Summary & Analysis)
-
----
-
-🚀 Highlights
-
-- Clean layered architecture
-- Role-based authorization system
-- Financial analytics implementation
-- Production-style API responses
-- Fully deployed live backend
-
----
-
-🔮 Future Improvements
-
-- JWT Authentication
-- Pagination & Filtering
-- DTO Layer
-- Logging
-
----
-
-👨‍💻 Author
-
-Tharun Prakash
-Backend Developer (Java | Spring Boot)
-
----
-
-⭐ Final Note
-
-This project demonstrates:
-
-- Backend API design
-- Role-based system implementation
-- Data aggregation & analytics
-- Cloud deployment
-
----
+© 2026 Zorvyn FinTech Pvt. Ltd. All rights reserved.
