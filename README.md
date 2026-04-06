@@ -1,173 +1,260 @@
-Zorvyn
-Assignment Portal
-Tharun Prakash G
-tharunprakash999@gmail.com
-Finance Data Processing and Access Control Backend
-Backend Developer Intern
-Internship
-Assignment Details
-Read the following instructions carefully before starting your assignment.
+🚀 Finance Dashboard Backend API
 
-Finance Data Processing and Access Control Backend
-Objective
-To evaluate your backend development skills through a practical assignment centered around API design, data modeling, business logic, and access control.
+🔗 Live API: https://findashboard-3.onrender.com/
+📦 GitHub Repository: <your-github-link>
 
-This assignment is intended to assess how you think about backend architecture, structure application logic, handle data correctly, and build reliable systems that are clear, maintainable, and logically organized.
+---
 
-Note: If you have already built a similar backend project earlier, you may submit that project for evaluation. Please make sure to clearly explain how it matches this assignment and share the repository and, if available, the deployed API or documentation link.
-Key Instructions
-You are not required to follow a fixed project structure. You are free to organize the backend in the way you believe is most appropriate.
-Focus on correctness, clarity, and maintainability. We are interested in how you design data flow, structure APIs, and write backend logic.
-Reasonable assumptions are acceptable. If something is not explicitly defined, you may make sensible assumptions and document them.
-Clean implementation matters. A smaller but well designed solution is better than a large but inconsistent one.
-Flexibility
-You have full freedom to:
+📌 Overview
 
-Use any backend language, framework, or library
-Use any database of your choice, or even an in memory store for a simplified implementation
-Define your own schema, service structure, and business logic flow
-Build REST APIs, GraphQL APIs, or an equivalent backend interface
-Use mock authentication and local development setup if needed
-Scenario
-Imagine you are building the backend for a finance dashboard system where different users interact with financial records based on their role.
+A robust backend system for a Finance Dashboard that manages financial transactions, user roles, and analytics.
 
-The system should support the storage and management of financial entries, user roles, permissions, and summary level analytics. The goal is to build a backend that is logically structured and able to serve data to a frontend dashboard in a clean and efficient way.
+This project demonstrates:
 
-Core Requirements
-1. User and Role Management
-Provide a way to manage users and their access levels within the system.
+- Clean API design
+- Role-based access control
+- Aggregation logic (summary, monthly, category analysis)
+- Real-world backend architecture
 
-Your backend should support:
+---
 
-Creating and managing users
-Assigning roles to users
-Managing user status such as active or inactive
-Restricting actions based on roles
-You may define roles such as:
+🧠 Roles & Access Control
 
-Viewer: Can only view dashboard data
-Analyst: Can view records and access insights
-Admin: Can create, update, and manage records and users
-The exact role model is up to you, but role based behavior should be clear in your implementation.
+Role| Permissions
+Admin| Full CRUD on transactions, access all summaries
+Analyst| View transactions + analytics
+Viewer| View only own transactions
 
-2. Financial Records Management
-Create backend support for financial data such as transactions or entries.
+---
 
-Each record can include fields such as:
+⚙️ Tech Stack
 
-Amount
-Type such as income or expense
-Category
-Date
-Notes or description
-Your backend should support operations such as:
+- Java 17
+- Spring Boot
+- Spring Data JPA
+- MySQL / Cloud DB
+- REST API
+- Docker
+- Render (Deployment)
 
-Creating records
-Viewing records
-Updating records
-Deleting records
-Filtering records based on criteria such as date, category, or type
-3. Dashboard Summary APIs
-Provide APIs or backend logic that can return summary level data for a dashboard.
+---
 
-Examples include:
+📂 Features
 
-Total income
-Total expenses
-Net balance
-Category wise totals
-Recent activity
-Monthly or weekly trends
-The purpose here is to show how you design backend endpoints or service logic for aggregated data, not just basic CRUD operations.
+- User management with roles
+- Transaction CRUD operations
+- Summary APIs (income, expense, balance)
+- Monthly aggregation
+- Category-wise analysis
+- Role-based authorization
+- Global exception handling
 
-4. Access Control Logic
-Implement backend level access control for different roles.
+---
 
-The system should clearly enforce which type of user can perform which action. For example:
+📡 API Endpoints
 
-A viewer should not be able to create or modify records
-An analyst may be allowed to read records and access summaries
-An admin may be allowed full management access
-You may implement this using middleware, guards, decorators, policy checks, or any equivalent method depending on the framework you choose.
+---
 
-5. Validation and Error Handling
-Your backend should demonstrate proper handling of incorrect or incomplete input.
+👤 User APIs
 
-This includes:
+➤ Create User
 
-Input validation
-Useful error responses
-Status codes used appropriately
-Protection against invalid operations
-The goal is not perfection, but your implementation should show that you understand how a backend should behave in real usage.
+POST /user
 
-6. Data Persistence
-Use a persistence approach suitable for your project.
+Request Body:
 
-This can be:
+{
+  "name": "Tharun",
+  "email": "test@gmail.com",
+  "role": "ADMIN"
+}
 
-A relational database
-A document database
-SQLite for simplicity
-Any other reasonable option
-If you choose a simplified or mock storage approach, mention it clearly in your documentation.
+---
 
-Optional Enhancements
-You may include additional improvements such as:
+💰 Transaction APIs
 
-Authentication using tokens or sessions
-Pagination for record listing
-Search support
-Soft delete functionality
-Rate limiting
-Unit tests or integration tests
-API documentation
-These are not mandatory, but thoughtful additions are always appreciated.
+---
 
-Evaluation Criteria
-1. Backend Design
-How well the application is structured, including routes, services, models, and separation of concerns.
+➤ Add Transaction (Admin only)
 
-2. Logical Thinking
-How clearly business rules, access control, and data processing have been implemented.
+PUT /transaction/{adminId}
 
-3. Functionality
-Whether the expected APIs and backend features work correctly and consistently.
+---
 
-4. Code Quality
-Readability, maintainability, naming, organization, and general coding practices.
+➤ Get Transactions by User
 
-5. Database and Data Modeling
-How appropriately data is modeled and managed for the use case.
+GET /transactions/{user_id}
 
-6. Validation and Reliability
-How well the application handles bad input, invalid states, and error conditions.
+---
 
-7. Documentation
-Clarity of the README, setup process, API explanation, assumptions made, and any tradeoffs considered.
+➤ Delete Transaction
 
-8. Additional Thoughtfulness
-Any extra effort that improves usability, clarity, or system design.
+DELETE /{userId}/{transId}
 
-Important Note
-This assignment is designed purely for assessment. The purpose is to understand your backend thinking, implementation style, and engineering approach. You are not expected to build a production ready system.
+---
 
-A well reasoned and well structured submission will always be valued more than unnecessary complexity. This assignment is an opportunity to show how you approach backend engineering from both a technical and practical perspective. We are interested not only in whether the system works, but also in how you think while building it.
+➤ Get All Transactions (Optional)
 
-Submission Deadline
-Mon, 06 Apr, 2026
-10:00 pm
+GET /transactions
 
-7 hours remaining
+---
 
-Important Guidelines
-Please note that you will only be able to submit your assignment once. Make sure to review your work thoroughly before submitting.
-All required fields must be completed before submission. Incomplete submissions will not be accepted.
-Your submission must be your own original work. Plagiarised content will result in disqualification.
-Tips for Success
-Take your time to understand the requirements thoroughly before starting. Plan your approach carefully and ensure your submission reflects your best work.
+📊 Dashboard APIs
 
-Ready to submit your assignment?
-Make sure you have reviewed all your work before submitting.
+---
 
-© 2026 Zorvyn FinTech Pvt. Ltd. All rights reserved.
+➤ Summary (Income, Expense, Balance)
+
+GET /summary/{adminId}/{userId}
+
+Response:
+
+{
+  "message": "Summary fetched",
+  "data": {
+    "income": 5000,
+    "expense": 2000,
+    "balance": 3000
+  }
+}
+
+---
+
+➤ Monthly Summary
+
+GET /summary/monthly/{adminId}/{userId}
+
+---
+
+➤ Category Analysis
+
+GET /analysis/category/{adminId}/{userId}
+
+---
+
+🧪 Health Check
+
+GET /greet
+
+---
+
+🔐 Access Control Logic
+
+- Admin required for:
+  
+  - Add / Delete transactions
+  - Summary & analytics
+
+- Viewer:
+  
+  - Only read own transactions
+
+- Analyst:
+  
+  - Access insights + summaries
+
+---
+
+⚠️ Error Handling
+
+All errors return structured JSON:
+
+{
+  "status": 403,
+  "error": "Forbidden",
+  "message": "Access Denied"
+}
+
+---
+
+🧠 Use Cases
+
+---
+
+ 1. Admin creates transaction
+
+- Admin adds financial records for users
+- Data stored and linked to user
+
+---
+
+ 2. Viewer checks own transactions
+
+- Can only access their data
+- No modification allowed
+
+---
+
+ 3. Analyst views insights
+
+- Category-wise spending
+- Monthly trends
+- Summary data
+
+---
+
+ 4. Dashboard consumption
+
+Frontend can directly use:
+
+- "/summary" → balance
+- "/monthly" → charts
+- "/analysis" → pie charts
+
+---
+
+🗄️ Data Model
+
+User
+
+- id
+- name
+- email
+- role
+
+Transaction
+
+- id
+- amount
+- type (INCOME / EXPENSE)
+- category
+- date
+- user (relation)
+
+---
+
+🚀 Deployment
+
+- Hosted on Render
+- Dockerized application
+- Cloud database integration
+
+---
+
+📈 Highlights
+
+✔ Clean architecture
+✔ Real-world backend logic
+✔ Aggregation APIs
+✔ Role-based system
+✔ Production-like deployment
+
+---
+
+🔥 Future Improvements
+
+- JWT Authentication
+- Pagination
+- Swagger API docs
+- Unit testing
+
+---
+
+👨‍💻 Author
+
+Tharun Prakash
+Backend Developer
+
+---
+
+⭐ If you like this project, feel free to star the repo!
