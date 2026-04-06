@@ -55,6 +55,12 @@ Viewer| View only own transactions
 
 ---
 
+🧪 Health Check
+
+GET /greet
+
+---
+
 👤 User APIs
 
 ➤ Create User
@@ -129,12 +135,6 @@ GET /summary/monthly/{adminId}/{userId}
 ➤ Category Analysis
 
 GET /analysis/category/{adminId}/{userId}
-
----
-
-🧪 Health Check
-
-GET /greet
 
 ---
 
